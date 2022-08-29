@@ -1,2 +1,2 @@
-# MIneChess
+# MineChess
 AutoChess on Minecraft

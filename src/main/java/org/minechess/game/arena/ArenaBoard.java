@@ -1,13 +1,16 @@
 package org.minechess.game.arena;
 
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 public class ArenaBoard {
     //layout 8x8 / real size 16x16 -> 2x2 for each slot
 
+    private Arena arena;
     private final Location location;
 
-    public ArenaBoard(Location location) {
+    public ArenaBoard(Arena arena,Location location) {
+        this.arena = arena;
         this.location = location;
     }
     public Location getCenter(){
@@ -27,10 +30,11 @@ public class ArenaBoard {
         newLoc.setYaw(180F-newLoc.getYaw());
         return newLoc;
     }
-    public Location getRelativeLocation(Location current,Arena otherArena){
+    public Location getRelativeLocation(Player player, Arena otherArena){
         if (otherArena==null) return getCenter();
         ArenaBoard other = otherArena.getBoard();
-        Location newLoc = location.add(current.toVector().subtract(other.location.toVector()));
+        Location newLoc = location.add(player.getLocation().toVector().subtract(other.location.toVector()));
+        if (!(this.arena.getHolder().getPlayer()==player || otherArena.getHolder().getPlayer()==player))
         newLoc.setYaw(180F-newLoc.getYaw());
         return newLoc;
     }

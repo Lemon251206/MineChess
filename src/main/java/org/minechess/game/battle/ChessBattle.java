@@ -53,8 +53,16 @@ public abstract class ChessBattle {
     public void teleportPlayer(Player player, Arena arena){
         teleportPlayer(player,arena,false);
     }
+
+    /**
+     * Dịch chuyển người chơi đến một arena khác
+     * @param player Người chơi cần dịch chuyển
+     * @param arena Địa điểm dịch chuyển đến
+     * @param center Dịch chuyển vào giữa arena (true) hay dịch chuyển giữ nguyên vị trí tương đối (false)
+     */
     public void teleportPlayer(Player player, Arena arena,boolean center){
-        player.teleport(center?arena.getBoard().getCenter():arena.getBoard().getRelativeLocation(player.getLocation(),currentArena.get(player)));
+        if (currentArena.get(player)==arena) return;
+        player.teleport(center?arena.getBoard().getCenter():arena.getBoard().getRelativeLocation(player,currentArena.get(player)));
         currentArena.put(player,arena);
     }
 

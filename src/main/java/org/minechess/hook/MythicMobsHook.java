@@ -10,14 +10,13 @@ import io.lumine.mythic.bukkit.utils.serialize.Position;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
-import org.minechess.MineChess;
 
 
 public class MythicMobsHook {
     private final boolean enable;
     private MobExecutor mobManager;
 
-    public MythicMobsHook(MineChess mineChess){
+    public MythicMobsHook(){
         this.enable = Bukkit.getPluginManager().isPluginEnabled("MythicMobs");
         if (!enable) return;
         this.mobManager = MythicBukkit.inst().getMobManager();

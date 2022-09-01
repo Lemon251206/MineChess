@@ -1,9 +1,7 @@
 package org.minechess.command;
 
-import io.lumine.mythic.bukkit.utils.command.CommandMapUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.command.*;
-import org.bukkit.plugin.SimplePluginManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.minechess.MineChess;

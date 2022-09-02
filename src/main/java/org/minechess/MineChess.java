@@ -1,6 +1,7 @@
 package org.minechess;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.minechess.command.content.MainCommand;
 
 public final class MineChess extends JavaPlugin {
 
@@ -13,6 +14,7 @@ public final class MineChess extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        new MainCommand();
     }
 
     @Override

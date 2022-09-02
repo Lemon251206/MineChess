@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.minechess.MineChess;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 public class RegisteredCommand extends CommandPart implements CommandExecutor, TabCompleter {
@@ -15,7 +16,9 @@ public class RegisteredCommand extends CommandPart implements CommandExecutor, T
     public RegisteredCommand(String name){
         super(name);
         try {
-            CommandMap cm = (CommandMap) Bukkit.getPluginManager().getClass().getDeclaredField("commandMap").get(Bukkit.getPluginManager());
+            Field f = Bukkit.getPluginManager().getClass().getDeclaredField("commandMap");
+            f.setAccessible(true);
+            CommandMap cm = (CommandMap) f.get(Bukkit.getPluginManager());
             cm.register(name,this);
 
         } catch ( NoSuchFieldException | IllegalAccessException e ) {

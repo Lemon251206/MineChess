@@ -1,10 +1,6 @@
 package org.minechess.command.content;
 
-import io.lumine.mythic.api.MythicProvider;
-import io.lumine.mythic.api.mobs.MythicMob;
 import io.lumine.mythic.bukkit.MythicBukkit;
-import io.lumine.mythic.core.mobs.MobType;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.minechess.command.CommandPart;
 import org.minechess.command.RegisteredCommand;
@@ -12,7 +8,6 @@ import org.minechess.hook.MythicMobsHook;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MainCommand {
     public MainCommand(){

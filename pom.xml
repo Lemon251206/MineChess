@@ -71,8 +71,12 @@
             <url>https://redempt.dev</url>
         </repository>
         <repository>
-            <id>glaremasters</id>
-            <url>https://repo.glaremasters.me/repository/concuncan/</url>
+            <id>rapture-snapshots</id>
+            <url>https://repo.rapture.pw/repository/maven-snapshots/</url>
+        </repository>
+        <repository>
+            <id>rapture-releases</id>
+            <url>https://repo.rapture.pw/repository/maven-releases/</url>
         </repository>
     </repositories>
 
@@ -98,7 +102,8 @@
         <dependency>
             <groupId>com.grinderwolf</groupId>
             <artifactId>slimeworldmanager-api</artifactId>
-            <version>2.2.1</version>
+            <version>2.9.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

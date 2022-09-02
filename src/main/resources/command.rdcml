@@ -1,0 +1,21 @@
+minechess{
+    create string:match {
+        help Chưa có hướng dẫn
+        hook match_create
+        user player
+        permission minechess.admin.create
+    }
+    join string:match {
+        help Chưa có hướng dẫn
+        hook match_join
+        user player
+        permission minechess.member.join
+    }
+    spectator string:match {
+        help Chưa có hướng dẫn
+        hook match_spec
+        user player
+        permission minechess.member.spectator
+    }
+    help create/join/spectator
+}

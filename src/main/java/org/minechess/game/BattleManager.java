@@ -10,7 +10,6 @@ public class BattleManager {
     public BattleManager(){
 
     }
-
     public ArrayList<ChessBattle> getBattleList() {
         return battleList;
     }

@@ -3,7 +3,6 @@ package org.minechess.game.arena;
 import org.bukkit.entity.Player;
 import org.minechess.game.battle.ChessBattle;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 

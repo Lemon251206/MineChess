@@ -1,6 +1,7 @@
 package org.minechess.command;
 
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,6 +23,15 @@ public class CommandPackage {
     public CommandSender getSender() {
         return sender;
     }
+
+    public boolean isPlayer() {
+        return (sender instanceof Player);
+    }
+
+    public Player getPlayer() {
+        return ((Player) sender);
+    }
+
     public String[] getArg() {
         return arg;
     }

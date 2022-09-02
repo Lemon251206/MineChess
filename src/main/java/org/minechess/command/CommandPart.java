@@ -24,7 +24,7 @@ public class CommandPart extends Command {
     }
     public CommandPart setCompleter(Function<CommandPackage, List<String>> function){
         completer = function;
-        return this;
+    return this;
     }
 
     /**

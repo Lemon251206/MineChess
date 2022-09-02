@@ -6,6 +6,8 @@ import org.minechess.command.CommandPart;
 import org.minechess.command.RegisteredCommand;
 import org.minechess.hook.MythicMobsHook;
 
+import com.google.common.collect.Lists;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +36,51 @@ public class MainCommand {
                                 })
                         )
         );
+        command.setCompleter(pack -> {
+            String[] tabs = {"arena"};
+            return Lists.newArrayList(tabs);
+        });
+        command.addChildren(arena());
+    }
+
+    private CommandPart arena() {
+        CommandPart main = new CommandPart("arena");
+        CommandPart create = new CommandPart("create");
+        CommandPart edit = new CommandPart("edit");
+        CommandPart help = new CommandPart("help");
+
+        main.setCompleter(pack -> {
+            String[] tabs = {"create", "edit", "help"};
+            return Lists.newArrayList(tabs);
+        });
+        main.setExecutor(pack -> {
+            pack.getSender().sendMessage("Sai lệnh, sử dụng /arena help để xem danh sách lệnh.");
+            return false;
+        });
+        create.setCompleter(pack -> {
+            String[] tabs = {"[<arena>]"};
+            return Lists.newArrayList(tabs);
+        });
+        create.setExecutor(pack -> {
+
+            return true;
+        });
+        edit.setCompleter(pack -> {
+            String[] tabs = {"[<arena>]"};
+            return Lists.newArrayList(tabs);
+        });
+        edit.setExecutor(pack -> {
+            
+            return true;
+        });
+        help.setExecutor(pack -> {
+            
+            return true;
+        });
+
+        main.addChildren(create);
+        main.addChildren(edit);
+        main.addChildren(help);
+        return main;
     }
 }

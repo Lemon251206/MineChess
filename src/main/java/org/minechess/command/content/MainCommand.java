@@ -36,7 +36,10 @@ public class MainCommand {
                                 })
                         )
         );
-
+        command.setCompleter(pack -> {
+            String[] tabs = {"arena"};
+            return Lists.newArrayList(tabs);
+        });
         command.addChildren(arena());
     }
 

@@ -1,4 +1,6 @@
 name: MineChess
 version: '${project.version}'
 main: org.minechess.MineChess
-api-version: 1.19
+api-version: 1.14
+commands:
+  minechess:

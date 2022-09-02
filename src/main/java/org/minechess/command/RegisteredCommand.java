@@ -15,7 +15,6 @@ public class RegisteredCommand extends CommandPart implements CommandExecutor, T
         try {
             CommandMap cm = (CommandMap) Bukkit.getPluginManager().getClass().getDeclaredField("commandMap").get(Bukkit.getPluginManager());
             cm.register(name,this);
-
         } catch ( NoSuchFieldException | IllegalAccessException e ) {
             e.printStackTrace();
         } finally {
